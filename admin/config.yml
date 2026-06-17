@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: deseos-io/bna
+  name: git-gateway
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 media_folder: assets/img
 public_folder: /assets/img
