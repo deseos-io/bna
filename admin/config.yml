@@ -1,0 +1,46 @@
+backend:
+  name: github
+  repo: deseos-io/bna
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: assets/img
+public_folder: /assets/img
+
+locale: es
+
+collections:
+  - name: configuracion
+    label: "Configuracion del sitio"
+    files:
+      - name: sitio
+        label: "Precio, Checkout y Video"
+        file: _data/site.json
+        format: json
+        fields:
+          - label: "Precio"
+            name: price
+            widget: string
+            hint: "Ejemplo: $33"
+          - label: "Link de Checkout"
+            name: checkoutUrl
+            widget: string
+            required: false
+            hint: "Hotmart, Stripe, etc."
+          - label: "Link del Video"
+            name: videoUrl
+            widget: string
+            required: false
+            hint: "YouTube, Vimeo o link directo .mp4"
+          - label: "Periodo del precio"
+            name: pricePeriod
+            widget: string
+            default: "USD/mes"
+          - label: "Legales"
+            name: legal
+            widget: object
+            collapsed: true
+            fields:
+              - {label: "URL Privacidad", name: privacidad, widget: string, default: "privacidad.html"}
+              - {label: "URL Terminos", name: terminos, widget: string, default: "terminos.html"}
